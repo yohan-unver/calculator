@@ -1,10 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import {CalculationListComponent} from "./components/calculation-list/calculation-list.component";
+import {CalculatorViewComponent} from "./components/calculator-view/calculator-view.component";
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AppComponent],
+      imports: [AppComponent, CalculationListComponent, CalculatorViewComponent],
     }).compileComponents();
   });
 
