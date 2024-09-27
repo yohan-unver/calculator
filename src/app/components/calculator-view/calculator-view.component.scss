@@ -1,0 +1,76 @@
+.calculation {
+  border: 1px solid black;
+  padding: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+
+  .result {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .binary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid black;
+
+    .binary-left,
+    .binary-right {
+      width: 40%;
+
+      input {
+        width: 100%;
+        padding: 5px;
+        font-size: 16px;
+      }
+    }
+
+    .binary-operator {
+      font-size: 24px;
+      text-align: center;
+      width: 20%;
+    }
+  }
+
+  .unary {
+    padding: 10px;
+    border: 1px solid black;
+    text-align: center;
+
+    select {
+      width: 100%;
+      padding: 5px;
+      font-size: 16px;
+    }
+  }
+
+  .child {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid black;
+
+    input {
+      width: 100%;
+      padding: 5px;
+      font-size: 16px;
+    }
+  }
+
+  button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
+}

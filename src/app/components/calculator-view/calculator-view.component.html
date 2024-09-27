@@ -1,0 +1,72 @@
+<form [formGroup]="calculationForm" (ngSubmit)="onSubmit()">
+  <div class="calculation">
+    <div class="result">
+      = {{ result }}
+    </div>
+
+    <div class="binary">
+      <!-- Left Child -->
+      <div class="binary-left">
+        <label for="leftChildType">Left Child Type</label>
+        <select id="leftChildType" formControlName="leftChildType">
+          <option value="constant">Constant</option>
+          <option value="unary">Unary</option>
+        </select>
+
+        <div *ngIf="calculationForm.value.leftChildType === 'constant'">
+          <label for="leftConstant">Left Constant</label>
+          <input id="leftConstant" formControlName="leftConstant" type="number" />
+        </div>
+
+        <div *ngIf="calculationForm.value.leftChildType === 'unary'">
+          <label for="leftUnaryOperator">Left Unary Operator</label>
+          <select id="leftUnaryOperator" formControlName="leftUnaryOperator">
+            <option value="Absolute">Absolute</option>
+            <option value="AdditiveInverse">Additive Inverse</option>
+            <option value="MultiplicativeInverse">Multiplicative Inverse</option>
+          </select>
+
+          <label for="leftConstant">Left Constant (for Unary)</label>
+          <input id="leftConstant" formControlName="leftConstant" type="number" />
+        </div>
+      </div>
+
+      <div class="binary-operator">
+        <label for="binaryOperator">Operator</label>
+        <select id="binaryOperator" formControlName="binaryOperator">
+          <option value="Addition">+</option>
+          <option value="Subtraction">-</option>
+          <option value="Multiplication">*</option>
+          <option value="Division">/</option>
+        </select>
+      </div>
+
+      <div class="binary-right">
+        <label for="rightChildType">Right Child Type</label>
+        <select id="rightChildType" formControlName="rightChildType">
+          <option value="constant">Constant</option>
+          <option value="unary">Unary</option>
+        </select>
+
+        <div *ngIf="calculationForm.value.rightChildType === 'constant'">
+          <label for="rightConstant">Right Constant</label>
+          <input id="rightConstant" formControlName="rightConstant" type="number" />
+        </div>
+
+        <div *ngIf="calculationForm.value.rightChildType === 'unary'">
+          <label for="rightUnaryOperator">Right Unary Operator</label>
+          <select id="rightUnaryOperator" formControlName="rightUnaryOperator">
+            <option value="Absolute">Absolute</option>
+            <option value="AdditiveInverse">Additive Inverse</option>
+            <option value="MultiplicativeInverse">Multiplicative Inverse</option>
+          </select>
+
+          <label for="rightConstant">Right Constant (for Unary)</label>
+          <input id="rightConstant" formControlName="rightConstant" type="number" />
+        </div>
+      </div>
+    </div>
+
+    <button type="submit">Calculate</button>
+  </div>
+</form>

@@ -1,0 +1,15 @@
+<table>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Creation Date</th>
+    <th>Calculation Result</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let calculation of calculations$ | async">
+    <td>{{ calculation.id }}</td>
+    <td>{{ calculation.createdAt | date:'short' }}</td>
+  </tr>
+  </tbody>
+</table>
